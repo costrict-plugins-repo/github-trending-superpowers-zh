@@ -1,0 +1,18 @@
+{
+  "$comment": [
+    "记录本 fork 上一次完成上游同步时对齐到的 upstream commit。",
+    "为什么需要它：audit 对已翻译文件只比「标题数」，正文改多少行都看不见 ——",
+    "上游 v6.3.0 给 subagent-driven-development 加了 113 行，我们这边一声不吭。",
+    "有了基线，audit 才能算出「自上次同步以来上游改了哪些文件、各多少行」。",
+    "同步完成后更新 commit / version / date 三个字段。"
+  ],
+  "upstream": "https://github.com/obra/superpowers",
+  "commit": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+  "version": "v7.0.0",
+  "date": "2026-10-19",
+  "evidence": "上游 v7.0.0 对齐完成：brainstorming 按 v7 从头重译（先判断知道多少、一次一个开放问题、分块复述、意图清楚后再定规模、builder check 取代 spec 审查，新增 builder-check-prompt.md、删除 spec-document-reviewer-prompt.md）；hooks/session-start 与 run-hook.cmd（空 PATH、反斜杠路径、Windows bash 查找与退出码）；task-done 静默成功记账；sdd-workspace 仅首次创建 .gitignore 与 Windows 路径归一化；server.cjs 字面插入；requesting-code-review 的 BASE_SHA 改用 cut；systematic-debugging 示例只报告变量是否设置。有意保留的分歧：brainstorming 译文补充了中文语境说明——跳过提问须对方明确接受，“你看着办/你定吧”是请你拿主意、应提方案而非跳过流程（eval 中 after 版两次把“你看着办”当成跳过提问并提前构建，补充后复测未再出现）；skills/writing-skills/render-graphs.js 仍为 CJS；subagent-driven-development/scripts/task-brief 额外识别「任务 N」标题。",
+  "trackedPaths": [
+    "skills",
+    "hooks"
+  ]
+}
